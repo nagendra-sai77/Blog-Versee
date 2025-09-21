@@ -70,7 +70,7 @@ const HomePage = () => {
             <div className=" items-center">
                 <h1 className="font-extrabold text-3xl text-center" >Welcome to blog Verse</h1>
                 <p className="text-gray-500 text-xl text-center">Discover amazing stories, insights, and ideas from our community of writers.<br /><span className="text-blue-400 hover:cursor-pointer hover:text-blue-600">SignIn</span> to create your own posts and save your favorites.</p>
-                <div className="grid grid-cols-3 gap-10 p-10  ">
+                <div className="grid grid-cols-3 gap-10 p-10 ">
                     {
                         posts.map((post) => (
                             <div key={post.id} className="border-1 rounded-2xl  ">

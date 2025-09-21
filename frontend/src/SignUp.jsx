@@ -158,7 +158,7 @@ const SignUp = () => {
             {/* {errors && <p className="text-red-500">{errors}</p>} */}
             {success && <p className="text-green-500">{success}</p>}
             <p className="font-semibold  text-gray-400 text-sm md:xl">Already have an account?<Link to="/signin" className="text-fuchsia-500 text-sm">Sign in here</Link></p>
-            <Link to="/home" className=" text-center font-semibold text-gray-600 hover:bg-blue-500 border-2 rounded-2xl bg-blue-300 lg-w-[90%] sm-w-full md:w-[95%] flex justify-center">    <ArrowLeftToLine />
+            <Link to="home" className=" text-center font-semibold text-gray-600 hover:bg-blue-500 border-2 rounded-2xl bg-blue-300 lg-w-[90%] sm-w-full md:w-[95%] flex justify-center">    <ArrowLeftToLine />
             <p>Back to Home</p></Link>
         </form>
     </div>
