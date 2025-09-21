@@ -1,7 +1,15 @@
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 import { Eye } from 'lucide-react';
+import { EyeOff } from 'lucide-react';
+import { Lock } from 'lucide-react';
+import { useState } from "react";
+
 const SignIn = () => {
+    const[showPass,setShowPass] =useState(false)
+    const handlePass = () =>{
+        setShowPass((password)=>!password)
+    }
     return(
         <div>
             <NavBar/>
@@ -10,19 +18,21 @@ const SignIn = () => {
         <h1 className="font-bold text-2xl text-center " >SignIn</h1>
         <p className="font-semibold text-xl text-center">Access Your Account</p>
         <form className="mt-5">
-        <div className="w-[90%] flex flex-col gap-2">
+        <div className="lg-w-[90%] sm-w-full md:w-[95%] flex flex-col gap-2">
             <h1 >Email Address</h1>
             <input type="email" placeholder="Enter your Email" className="b-2 border-b-gray-400 w-full py-2 px-2 rounded-2xl border-2 focus:outline-none focus:border-cyan-600"/>
         </div>
-        <div className="w-[90%] flex flex-col gap-2" >
+        <div className="lg-w-[90%] sm-w-full md:w-[95%]  flex flex-col gap-2" >
             <h1>Password</h1>
             <div className="relative">
-            <input type="password" placeholder="Enter password"className="b-2 border-b-gray-400 w-full py-2 px-2 rounded-2xl border-2 focus:outline-none focus:border-cyan-600" />
-            <Eye className="absolute top-3 right-2"/>
+            <input type={showPass?"password":"text"} 
+             placeholder="Enter password"className="b-2 border-b-gray-400 w-full py-2 px-2 rounded-2xl border-2 focus:outline-none focus:border-cyan-600 pl-10" />
+            <p onClick={handlePass}> {showPass ? <Eye className="absolute top-3 right-2"/>:<EyeOff className="absolute top-3 right-2"/>}</p>
+            <Lock className=" absolute top-2 pl-2 "/>
             </div></div>
-        <div className="flex  mt-5   items-center justify-center p-2 rounded-2xl">
+        <div className="flex  mt-5   items-center justify-center p-2 rounded-2xl ">
                 <input type="checkbox"  className=""/>
-                <p>Remember me</p>
+                <p className="">Remember me</p>
                 <p className="text-cyan-500 hover:text-fuchsia-600 ml-5 hover:cursor-pointer">forgot password?</p>
                 
             </div>
